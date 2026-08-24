@@ -6,6 +6,7 @@ declare module "cloudflare:workers" {
     };
     BUCKET: {
       put(key: string, value: ArrayBuffer, options?: any): Promise<any>;
+      get(key: string): Promise<{body: ReadableStream; httpMetadata?: {contentType?: string}} | null>;
     };
   };
 }
